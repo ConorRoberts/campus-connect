@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
+import './Home.css';
 
-function App() {
+function Home() {
   return (
-    <div className="App">
+    <div className="Home">
       <header className="App-header">
         <h1>Hey there</h1>
       </header>
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
