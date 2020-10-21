@@ -1,73 +1,88 @@
 import "./Chat.css";
-import React, { useState } from 'react';
+import React, { useRef,useState } from "react";
 import firestore from "../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import {useAuthState} from "react-firebase-hooks/auth";
-import {useCollectionData} from "react-firebase-hooks/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
-export default function Chat(){
-    return(
-        <div>
-            <ChatBox/>
-        </div>
-    );
+export default function Chat() {
+  return (
+    <div className="screen">
+      <ChatBox />
+    </div>
+  );
 }
 
-function ChatMessage(props){
-    const {text} = props.message;
-    return(
-        <div>
-            <p>{text}</p>
-        </div>
-    );
+function ChatMessage(props) {
+  // Retrieving text from message object (passed as prop)
+  const { text } = props.message;
+  return (
+    <div className="message">
+      <p>{text}</p>
+    </div>
+  );
 }
 
-function ChatBox(){
-    // Set reference point for messages collection
-    const messagesRef = firestore
+function ChatBox() {
+
+  const dummy = useRef();
+  // Set reference point for messages collection
+  const messagesRef = firestore
     .collection("classes")
     .doc("MCS1000")
     .collection("messages");
 
-    // Organizing message data retrieved from messagesRef
-    const query = messagesRef.orderBy("timestamp").limit(25);
+  // Organizing message data retrieved from messagesRef
+  const query = messagesRef.orderBy("timestamp");
+
+  // Not sure what this does. Result saved in messages
+  const [messages] = useCollectionData(query, { idField: "id" });
+
+  // Used for modifying text box value
+  const [formValue, setFormValue] = useState("");
+
+  // Function for sending message
+  const sendMessage = async (e) => {
+    // Prevent browser refresh on form submission
+    e.preventDefault();
+
+    if (formValue){
+      // Add message to firebase collection
+      await messagesRef.add({
+        text: formValue,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
   
-    // Not sure what this does. Result saved in messages
-    const [messages] = useCollectionData(query, {idField:"id"});
-  
-    // Used for modifying text box value
-    const [formValue,setFormValue] = useState("");
-  
-    // Function for sending message
-    const sendMessage = async(e) =>{
-        // Prevent browser refresh on form submission
-        e.preventDefault();
-  
-        // Add message to firebase collection
-        await messagesRef.add({
-        text:formValue,
-        timestamp:firebase.firestore.FieldValue.serverTimestamp(),
-        })
-        
-        // Reset form value
-        setFormValue("");
+      // Reset form value
+      setFormValue("");
+
+      dummy.current.scrollIntoView({behavior:"smooth"});
     }
-    
-    return(
-      <>
-        <div>
-          {messages && messages.map(msg=> <ChatMessage key={msg.id} message={msg}/>)}
-        </div>
-        <form onSubmit={sendMessage}>
-          <input value={formValue} onChange={(e)=>setFormValue(e.target.value)}/>
-          <button type="submit">Send</button>
-        </form>
-      </>
-    )
-}
+  };
 
-function MessageBox(){
-
+  return (
+    <div>
+      <div className="chat-window">
+        {/* Checks if there are any messages
+        renders out all messages, passing the firebase message ID in as the key (for react rendering)
+        passes in entire message object for use within later functions */}
+        {messages &&
+          messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        <div ref={dummy}></div>
+      </div>
+      <form className="form-container" onSubmit={sendMessage}>
+        <input
+          className="send-box"
+          value={formValue}
+          onChange={(e) => setFormValue(e.target.value)}
+          placeholder="   Message..."
+        />
+        <button className="send-btn" type="submit">
+          Send
+        </button>
+      </form>
+    </div>
+  );
 }
