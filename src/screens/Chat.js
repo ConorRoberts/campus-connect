@@ -8,9 +8,24 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 export default function Chat() {
+  //State for current class
+  const [currentClass,setClass] = useState("MCS1000");
+
+  const classesQuery = firestore
+  .collection("University of Guelph");
+
+  const [classes] = useCollectionData(classesQuery, { idField: "id" });
+
   return (
     <div className="screen">
-      <ChatBox />
+      <div className="class-picker">
+          <label for="classes">Class:</label>
+          <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
+            {classes &&
+            classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
+          </select>
+      </div>
+      <ChatBox currentClass={currentClass}/>
     </div>
   );
 }
@@ -25,13 +40,13 @@ function ChatMessage(props) {
   );
 }
 
-function ChatBox() {
+function ChatBox(props) {
 
   const dummy = useRef();
   // Set reference point for messages collection
   const messagesRef = firestore
-    .collection("classes")
-    .doc("MCS1000")
+    .collection("University of Guelph")
+    .doc(props.currentClass)
     .collection("messages");
 
   // Organizing message data retrieved from messagesRef
@@ -86,3 +101,27 @@ function ChatBox() {
     </div>
   );
 }
+
+// function ClassPicker(){
+
+//   //State for current class
+//   const [currentClass,setClass] = useState("MCS1000");
+
+//   const classesQuery = firestore
+//   .collection("University of Guelph");
+
+//   const [classes] = useCollectionData(classesQuery, { idField: "id" });
+
+//   return(
+//     <div className="class-picker">
+//       <form>
+//         <label for="classes">Class:</label>
+//         <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
+//           {classes &&
+//            classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
+//         </select>
+//         <input type="submit"/>
+//       </form>
+//     </div>
+//   );
+// }
