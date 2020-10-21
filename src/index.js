@@ -6,7 +6,7 @@ import Chat from "./screens/Chat";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Chat />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
