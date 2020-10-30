@@ -12,7 +12,7 @@ function Home() {
   return (
     <div className="Home">
       <header>
-        <h1>App</h1>
+        <h1 className= "header-text">Campus Connect</h1>
         <nav>
           <ul>
             <li>
@@ -30,9 +30,12 @@ function Home() {
           <img src={splashImage} alt="Campus splash image"/>
         </div>
         <Picker/>
+        <button className= "go-button">Go!</button>
       </main>
-      <footer id="contact">
-        This is contact info
+      <footer className="footer" id="contact">
+        <h1 className= "footer-text">Contact Info:</h1>
+        <h1 className= "footer-text">Eric Santos: Email - santeric2001@gmail.com Phone - 5192404685</h1>
+        <h1 className= "footer-text">Conor Roberts: Email: conorIsGay@Gayboys.com  Phone - 4204206969</h1>
       </footer>
     </div>
   );

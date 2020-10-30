@@ -18,13 +18,16 @@ export default function Chat() {
 
   return (
     <div className="screen">
-      <div className="class-picker">
-          <label for="classes">Class:</label>
-          <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
-            {classes &&
-            classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
-          </select>
-      </div>
+      <header>
+        <h1 className= "header-text">University of Guelph </h1>
+        <div className="class-picker">
+              <label for="classes" className= "header-text">Class:</label>
+              <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
+                {classes &&
+                classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
+              </select>
+        </div>
+      </header>
       <ChatBox currentClass={currentClass}/>
     </div>
   );
