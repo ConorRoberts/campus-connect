@@ -55,7 +55,6 @@
     border:none;
     padding:0.5rem;
     border-radius:30px;
-    transition: background-color 300ms;
 }
 .send-btn:hover{
     background-color:rgb(135, 159, 184);
@@ -64,10 +63,9 @@
 .class-picker{
     margin-top: 3rem;
     position: relative;;
-    top:0;
-    left:0;
     border:1px solid white;
     font-size:1.5rem;
+    transform: translateX(0%);
 }
 
 .class-picker form{
@@ -81,11 +79,28 @@
     left: 0;
     top: 0;
     width: 100%;
-    background-color:#141A46
+    background-color:#141A46;
+    padding: 0.01rem;
 }
 
 .header-text{
     font-size: 3rem;
     color: white;
     text-align: center;
+    transform: translateX(0%);
+}
+
+.menu-button{
+    position: relative;
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    top: 0;
+}
+
+.menu-button-main{
+    background-color: #141A46;
+    border: none;
+    transform: translateX(10%);
 }
