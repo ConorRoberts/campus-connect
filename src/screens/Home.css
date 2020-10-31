@@ -101,11 +101,11 @@ h1 {
   font-size: 2rem;
   background: #EC8B5E;
   border-radius: 5px;
-
+  color: black;
 }
 
 .go-button:hover{
-  background-color: white;
+  background-color:#ec510a;
 }
 
 .footer{

@@ -17,11 +17,14 @@
     margin-top: 0.1rem;
     padding:1.5rem 1rem;
     text-align:left;
-    border-radius:10px;
     display: inline-block;
-    background-color: rgb(231, 228, 228);
+    background-color:white;
     color:black;
     font-size: 1.5rem;
+}
+
+.message:hover{
+    background-color: rgb(189, 185, 185);
 }
 
 .form-container{
