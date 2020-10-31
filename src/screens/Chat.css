@@ -18,6 +18,28 @@ html {
   color: white;
   max-height: 100vh;
 }
+.Chat .top-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.Chat .top-bar .sidebar-container .menu-icon {
+  font-size: 6rem;
+  color: black;
+}
+.Chat .top-bar .sidebar-container:hover .side-menu {
+  right: 0;
+}
+.Chat .top-bar .sidebar-container .side-menu {
+  height: 100vh;
+  background-color: #141A46;
+  position: absolute;
+  top: 0;
+  right: -15vw;
+  width: 15vw;
+  transition-property: right;
+  transition-duration: 300ms;
+}
 .Chat .chat-component {
   position: relative;
   bottom: 0;

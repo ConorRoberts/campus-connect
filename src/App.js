@@ -1,11 +1,7 @@
 import React,{useEffect, useState} from "react";
 import Home from "./screens/Home";
 import Chat from "./screens/Chat";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
 
-import {useAuthState} from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firestore,{auth,provider} from "./firebase";
 
@@ -26,7 +22,7 @@ export default function App(props){
 
     const [formSubmitted,setFormSubmitted]=useState(false);
 
-    if (formSubmitted){
+    if (true){
         return (
             <div>
                 <Chat currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes} schoolsQuery={schoolsQuery} classesQuery={classesQuery}/>
@@ -35,7 +31,7 @@ export default function App(props){
     }else{
         return(
             <div>
-                <Home onSubmit={setFormSubmitted}/>
+                <Home onSubmit={setFormSubmitted} currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes} schoolsQuery={schoolsQuery} classesQuery={classesQuery}/>
             </div>
         );
     }

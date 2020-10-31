@@ -6,6 +6,7 @@ import "firebase/firestore";
 import "firebase/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Picker from "../components/Picker";
+import MenuIcon from '@material-ui/icons/Menu';
 
 export default function Chat(props) {
 
@@ -13,8 +14,14 @@ export default function Chat(props) {
 
   return (
     <div className="Chat">
-      <div className="course-info-container">
+      <div className="top-bar">
         <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
+        <div className="sidebar-container">
+          <MenuIcon className="menu-icon"/>  
+          <div className="side-menu">
+            <h1>Hello</h1>
+          </div>
+        </div>
       </div>
       <ChatBox currentClass={currentClass} currentSchool={currentSchool}/>
     </div>

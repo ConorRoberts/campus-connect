@@ -17,6 +17,8 @@ html {
   display: flex;
   align-items: center;
   height: 5vh;
+  flex: 0.95;
+  height: auto;
 }
 .chat-picker label {
   font-size: 3rem;
