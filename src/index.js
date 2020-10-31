@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Home from './screens/Home';
-import Chat from "./screens/Chat";
+import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );

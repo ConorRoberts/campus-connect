@@ -1,70 +1,77 @@
-.chat-window{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    height:90vh;
-    overflow-y:scroll;
-    overflow-x:hidden;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.screen{
-    background-color:rgb(29, 31, 49);
-    height:100vh;
-    position:relative;
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
 }
 
-.message{
-    padding:0rem 1rem;
-    text-align:center;
-    border-radius:30px;
-    display:inline-block;
-    background-color:rgb(114, 114, 161);
-    color:white;
+.Chat {
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  max-height: 100vh;
 }
-
-.form-container{
-    position:sticky;
-    bottom:0;
-    left:10rem;
-    flex:1;
-    display:flex;
-    justify-content:center;
-    /* transform:translateX(-50%); */
-    padding:0 25vw;
-    margin-top:1rem;
+.Chat .chat-component {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 0 5vw;
 }
-
-.send-box,.send-box:focus-within{
-    font-size:1.5rem;
-    flex:0.9;
-    background-color:rgb(165, 165, 165);
-    border-radius:30px;
-    margin-right:3rem;
-    border:1px solid black;
+.Chat .chat-component .chat-window {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 80vh;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 80vh;
 }
-
-.send-btn{
-    font-size:1.5rem;
-    flex:0.1;
-    background-color:rgb(84, 140, 196);
-    border:none;
-    padding:0.5rem;
-    border-radius:30px;
-    transition: background-color 300ms;
+.Chat .chat-component .chat-window .message {
+  padding: 0rem 1rem;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: #EC8B5E;
+  color: white;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  margin: 0.3rem 0;
 }
-.send-btn:hover{
-    background-color:rgb(135, 159, 184);
+.Chat .chat-component .form-container {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  padding: 0 10vw;
+  margin-top: 1rem;
 }
-
-.class-picker{
-    position:absolute;
-    top:0;
-    left:0;
-    border:1px solid white;
-    font-size:1.5rem;
+.Chat .chat-component .form-container input, .Chat .chat-component .form-container button {
+  font-size: 2.5rem;
 }
-
-.class-picker form{
-    display:flex;
-    flex-direction:column;
+.Chat .chat-component .send-box, .Chat .chat-component .send-box:focus-within {
+  font-size: 1.5rem;
+  flex: 0.9;
+  background-color: #a5a5a5;
+  border-radius: 30px;
+  margin-right: 3rem;
+  border: 1px solid black;
+}
+.Chat .chat-component .send-btn {
+  font-size: 1.5rem;
+  flex: 0.1;
+  background-color: #EC8B5E;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 30px;
+  transition: background-color 300ms;
+}
+.Chat .chat-component .send-btn:hover {
+  background-color: #879fb8;
 }

@@ -1,0 +1,88 @@
+@import "../index.scss";
+
+.Chat{
+    // $background-main:#141A46;
+    // $accent-main:#EC8B5E;
+    // background-color:rgb(29, 31, 49);
+    background-color:white;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    color:white;
+    max-height:100vh;
+    
+    .chat-component{
+        // border:1px solid $accent-main;
+        position:relative;
+        bottom:0;
+        left:0;
+        padding:0 5vw;
+        // height:100vh;
+        .chat-window{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            height:80vh;
+            height:auto;
+            overflow-y:scroll;
+            overflow-x:hidden;
+            max-height:80vh;
+            // width:50%;
+            .message{
+                padding:0rem 1rem;
+                text-align:center;
+                border-radius:5px;
+                display:inline-block;
+                background-color:$accent-main;
+                color:white;
+                font-size:1.6rem;
+                padding:1.2rem;
+                margin:0.3rem 0;
+            }
+        }
+        .form-container{
+            position:relative;
+            bottom:0;
+            // left:10rem;
+            // flex:1;
+            display:flex;
+            padding:0 10vw;
+            margin-top:1rem;
+            input,button{
+                font-size:2.5rem;
+            }
+        }
+        
+        
+        .send-box,.send-box:focus-within{
+            font-size:1.5rem;
+            flex:0.9;
+            background-color:rgb(165, 165, 165);
+            border-radius:30px;
+            margin-right:3rem;
+            border:1px solid black;
+        }
+        
+        .send-btn{
+            font-size:1.5rem;
+            flex:0.1;
+            background-color:$accent-main;
+            border:none;
+            padding:0.5rem;
+            border-radius:30px;
+            transition: background-color 300ms;
+        }
+        .send-btn:hover{
+            background-color:rgb(135, 159, 184);
+        }
+    }
+    
+    // .class-picker{
+    //     // border:1px solid white;
+    //     font-size:1.5rem;
+    //     form{
+    //         display:flex;
+    //         flex-direction:column;
+    //     }
+    // }
+}

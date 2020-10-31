@@ -4,28 +4,19 @@ import firestore from "../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import Picker from "../components/Picker";
 
-export default function Chat() {
-  //State for current class
-  const [currentClass,setClass] = useState("MCS1000");
+export default function Chat(props) {
 
-  const classesQuery = firestore
-  .collection("University of Guelph");
-
-  const [classes] = useCollectionData(classesQuery, { idField: "id" });
+  const {setClass,currentClass,setSchool,currentSchool,classes,schools}=props;
 
   return (
-    <div className="screen">
-      <div className="class-picker">
-          <label for="classes">Class:</label>
-          <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
-            {classes &&
-            classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
-          </select>
+    <div className="Chat">
+      <div className="course-info-container">
+        <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
       </div>
-      <ChatBox currentClass={currentClass}/>
+      <ChatBox currentClass={currentClass} currentSchool={currentSchool}/>
     </div>
   );
 }
@@ -43,9 +34,10 @@ function ChatMessage(props) {
 function ChatBox(props) {
 
   const dummy = useRef();
+  
   // Set reference point for messages collection
   const messagesRef = firestore
-    .collection("University of Guelph")
+    .collection(props.currentSchool)
     .doc(props.currentClass)
     .collection("messages");
 
@@ -78,7 +70,7 @@ function ChatBox(props) {
   };
 
   return (
-    <div>
+    <div className="chat-component">
       <div className="chat-window">
         {/* Checks if there are any messages
         renders out all messages, passing the firebase message ID in as the key (for react rendering)
