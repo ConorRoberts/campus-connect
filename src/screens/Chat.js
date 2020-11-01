@@ -30,10 +30,10 @@ export default function Chat(props) {
 
 function ChatMessage(props) {
   // Retrieving text from message object (passed as prop)
-  const { text } = props.message;
+  const { text,timestamp} = props.message;
   return (
     <div className="message">
-      <p>{text}</p>
+      <p><strong>{new Date(timestamp.seconds * 1000).toLocaleDateString("en-US")}</strong>: {text}</p>
     </div>
   );
 }
@@ -44,9 +44,11 @@ function ChatBox(props) {
   
   // Set reference point for messages collection
   const messagesRef = firestore
-    .collection(props.currentSchool)
+    .collection("schools")
+    .doc(props.currentSchool)
+    .collection("classes")
     .doc(props.currentClass)
-    .collection("messages");
+    .collection("messages")
 
   // Organizing message data retrieved from messagesRef
   const query = messagesRef.orderBy("timestamp");
@@ -79,6 +81,7 @@ function ChatBox(props) {
   return (
     <div className="chat-component">
       <div className="chat-window">
+        <p className= "beginning-label">This is the beginning of the messages</p>
         {/* Checks if there are any messages
         renders out all messages, passing the firebase message ID in as the key (for react rendering)
         passes in entire message object for use within later functions */}
