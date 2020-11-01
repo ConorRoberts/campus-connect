@@ -22,7 +22,7 @@ export default function App(props){
 
     const [formSubmitted,setFormSubmitted]=useState(false);
 
-    if (true){
+    if (formSubmitted){
         return (
             <div>
                 <Chat currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes} schoolsQuery={schoolsQuery} classesQuery={classesQuery}/>
