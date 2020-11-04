@@ -20,7 +20,7 @@ function Home(props) {
         <nav>
           <ul>
             <li>
-              <button>Admin</button>
+              <button onClick={()=>setCurrentScreen("admin")}>Admin</button>
             </li>
           </ul>
         </nav>

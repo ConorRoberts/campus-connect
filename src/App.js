@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Home from "./screens/Home/Home";
 import Chat from "./screens/Chat/Chat";
+import Admin from "./screens/Admin/Admin";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firestore, { auth, provider } from "./firebase";
@@ -15,9 +16,6 @@ export default function App(props) {
 
   const [schools] = useCollectionData(schoolsQuery, { idField: "id" });
   const [classes] = useCollectionData(classesQuery, { idField: "id" });
-
-  // Need to remove soon
-  const [formSubmitted, setFormSubmitted] = useState(true);
 
   const [currentScreen, setCurrentScreen] = useState("home");
 
@@ -52,6 +50,11 @@ export default function App(props) {
           classesQuery={classesQuery}
         />
       </div>
+    );
+  }else if(currentScreen==="admin"){
+    return(
+
+      <Admin setCurrentScreen={setCurrentScreen}/>
     );
   }
 }
