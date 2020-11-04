@@ -10,10 +10,9 @@ import Picker from "../../components/Picker/Picker";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 function Home(props) {
-  const {setClass,currentClass,setSchool,currentSchool,classes,schools}=props;
+  const {setClass,currentClass,setSchool,currentSchool,classes,schools,setCurrentScreen,onSubmit}=props;
   const [user] = useAuthState(auth);
-        
-  const {onSubmit} = props;
+
   return (
     <div className="Home">
       <header>
@@ -28,13 +27,17 @@ function Home(props) {
       </header>
       <main>
         <div className="splash-container">
-          <h1>Hello There</h1>
+          <h1>Campus Connect</h1>
           <img src={splashImage} alt="Campus splash"/>
         </div>
         {user ? <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn className="google-signin"/>}
       </main>
       <footer className="contact-container">
-        <span>Conor Roberts : Conor@ConorRoberts.com</span>
+        <span>
+          Conor Roberts : Conor@ConorRoberts.com
+          <br></br>
+          Eric Santos : santeric@gmail.com
+        </span>
       </footer>
     </div>
   );

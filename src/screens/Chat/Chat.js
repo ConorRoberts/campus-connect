@@ -18,9 +18,11 @@ export default function Chat(props) {
         <div className="sidebar-container">
           <MenuIcon className="menu-icon"/>  
           <div className="side-menu">
-            <h1>Hello</h1>
             <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
           </div>
+        </div>
+        <div className="class-label-container">
+          <span>{currentClass}</span>
         </div>
       </div>
       <ChatBox currentClass={currentClass} currentSchool={currentSchool}/>
@@ -30,16 +32,16 @@ export default function Chat(props) {
 
 function ChatMessage(props) {
   // Retrieving text from message object (passed as prop)
-  const { text,sender_name,sender_email,timestamp} = props.message;
+  const { text,sender_name,sender_email,timestamp,photoURL} = props.message;
 
   return (
     <div className="message">
-      {
-        sender_name ? <p> <strong>{sender_name} ({sender_email})</strong>: {text}</p>
-        :<p> {text}</p>
-      }
-      {/* <p> {text}</p>
-      <p> {sender_name}: {text}</p> */}
+      <div>
+        {photoURL ? <img src={photoURL}/> : ""}
+      </div>
+      <p>
+        <strong>{sender_name} ({sender_email})</strong><br/>{text}
+      </p>
     </div>
   );
 }
@@ -70,7 +72,7 @@ function ChatBox(props) {
     // Prevent browser refresh on form submission
     e.preventDefault();
 
-    const {displayName,email} = auth.currentUser;
+    const {displayName,email,photoURL} = auth.currentUser;
 
     if (formValue){
       // Add message to firebase collection
@@ -78,7 +80,8 @@ function ChatBox(props) {
         text: formValue,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         sender_name:displayName,
-        sender_email:email
+        sender_email:email,
+        photoURL
       });
   
       // Reset form value

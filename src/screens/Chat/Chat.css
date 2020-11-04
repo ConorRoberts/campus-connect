@@ -17,10 +17,24 @@ html {
   overflow: hidden;
   color: white;
   max-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .Chat .top-bar {
   display: flex;
   width: 100%;
+  background-color: #141A46;
+  color: white;
+}
+.Chat .top-bar .class-label-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Chat .top-bar .class-label-container span {
+  font-size: 3rem;
+  text-align: center;
 }
 .Chat .top-bar .chat-picker {
   display: flex;
@@ -37,7 +51,7 @@ html {
 }
 .Chat .top-bar .sidebar-container .menu-icon {
   font-size: 6rem;
-  color: black;
+  color: inherit;
 }
 .Chat .top-bar .sidebar-container:hover .side-menu {
   left: 0;
@@ -61,6 +75,7 @@ html {
   bottom: 0;
   left: 0;
   padding: 0 5vw;
+  height: 100%;
 }
 .Chat .chat-component .chat-window {
   display: flex;
@@ -82,34 +97,40 @@ html {
   transform: translateX(-50%);
 }
 .Chat .chat-component .chat-window .message {
+  display: flex;
+  align-items: center;
   padding: 0rem 1rem;
   text-align: center;
   width: 100%;
-  display: block;
   color: white;
   font-size: 1.6rem;
   padding: 1.2rem;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
   text-align: justify;
   color: black;
-  border-bottom: 1px solid grey;
+}
+.Chat .chat-component .chat-window .message img {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
 }
 .Chat .chat-component .chat-window .message:hover {
-  background-color: grey;
+  background-color: #b8b8b8;
 }
 .Chat .chat-component .form-container {
-  position: relative;
+  position: absolute;
   bottom: 0;
   display: flex;
-  padding: 0 10vw;
+  width: 100%;
   margin-top: 1rem;
+  justify-content: center;
 }
 .Chat .chat-component .form-container input, .Chat .chat-component .form-container button {
   font-size: 2.5rem;
 }
 .Chat .chat-component .send-box, .Chat .chat-component .send-box:focus-within {
   font-size: 1.5rem;
-  flex: 0.9;
+  flex: 0.6;
   background-color: #a5a5a5;
   border-radius: 30px;
   margin-right: 3rem;
