@@ -4,16 +4,14 @@ import "firebase/firestore";
 import "firebase/auth";
 
 import './Home.css';
-import splashImage from "../assets/campus-splash.jpg";
-import firestore,{auth,provider} from "../firebase";
-import Picker from "../components/Picker";
+import splashImage from "../../assets/campus-splash.jpg";
+import firestore,{auth,provider} from "../../firebase";
+import Picker from "../../components/Picker/Picker";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 function Home(props) {
   const {setClass,currentClass,setSchool,currentSchool,classes,schools}=props;
   const [user] = useAuthState(auth);
-
-  // console.log(auth.currentUser.displayName,auth.currentUser.email);
         
   const {onSubmit} = props;
   return (
@@ -23,10 +21,7 @@ function Home(props) {
         <nav>
           <ul>
             <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Contact</a>
+              <button>Admin</button>
             </li>
           </ul>
         </nav>

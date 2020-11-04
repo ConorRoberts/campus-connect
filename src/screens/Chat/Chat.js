@@ -1,11 +1,11 @@
 import "./Chat.css";
 import React, { useEffect, useRef,useState } from "react";
-import firestore,{auth,provider} from "../firebase";
+import firestore,{auth,provider} from "../../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import Picker from "../components/Picker";
+import Picker from "../../components/Picker/Picker";
 import MenuIcon from '@material-ui/icons/Menu';
 import { TabScrollButton } from "@material-ui/core";
 

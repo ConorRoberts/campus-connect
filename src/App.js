@@ -1,6 +1,6 @@
 import React,{useEffect, useState,useRef} from "react";
-import Home from "./screens/Home";
-import Chat from "./screens/Chat";
+import Home from "./screens/Home/Home";
+import Chat from "./screens/Chat/Chat";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firestore,{auth,provider} from "./firebase";
