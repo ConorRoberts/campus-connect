@@ -11,12 +11,12 @@ export default function Picker(props){
         <label htmlFor="input-school">School:</label>
         <select onChange={(e)=> setSchool(e.target.value)} id="input-school" name="input-school" value={currentSchool}>
           {schools && 
-          schools.map((school)=><option value={school.id}>{school.id}</option>)}
+          schools.map((school)=><option key={school.id.split(" ").join("")} value={school.id}>{school.id}</option>)}
         </select>
         <label htmlFor="input-class">Class:</label>
         <select onChange={(e)=>setClass(e.target.value)} id="input-class" name="input-class" value={currentClass}>
           {classes && 
-          classes.map((c)=><option value={c.id}>{c.id}</option>)}
+          classes.map((c)=><option key={c.id} value={c.id}>{c.id}</option>)}
         </select>
         <button>
           Submit

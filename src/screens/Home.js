@@ -1,17 +1,19 @@
-import React, { useState,Component } from "react";
+import React from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-import {useAuthState} from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 import './Home.css';
 import splashImage from "../assets/campus-splash.jpg";
 import firestore,{auth,provider} from "../firebase";
 import Picker from "../components/Picker";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 function Home(props) {
   const {setClass,currentClass,setSchool,currentSchool,classes,schools}=props;
+  const [user] = useAuthState(auth);
+
+  // console.log(auth.currentUser.displayName,auth.currentUser.email);
         
   const {onSubmit} = props;
   return (
@@ -21,10 +23,10 @@ function Home(props) {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a>Home</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a>Contact</a>
             </li>
           </ul>
         </nav>
@@ -34,7 +36,7 @@ function Home(props) {
           <h1>Hello There</h1>
           <img src={splashImage} alt="Campus splash"/>
         </div>
-        <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
+        {user ? <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn/>}
       </main>
       <footer id="contact">
         This is contact info

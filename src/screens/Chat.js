@@ -1,12 +1,13 @@
 import "./Chat.css";
-import React, { useRef,useState } from "react";
-import firestore from "../firebase";
+import React, { useEffect, useRef,useState } from "react";
+import firestore,{auth,provider} from "../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Picker from "../components/Picker";
 import MenuIcon from '@material-ui/icons/Menu';
+import { TabScrollButton } from "@material-ui/core";
 
 export default function Chat(props) {
 
@@ -30,10 +31,16 @@ export default function Chat(props) {
 
 function ChatMessage(props) {
   // Retrieving text from message object (passed as prop)
-  const { text,timestamp} = props.message;
+  const { text,sender_name,sender_email,timestamp} = props.message;
+
   return (
     <div className="message">
-      <p><strong>{new Date(timestamp.seconds * 1000).toLocaleDateString("en-US")}</strong>: {text}</p>
+      {
+        sender_name ? <p> <strong>{sender_name}</strong>: {text}</p>
+        :<p> {text}</p>
+      }
+      {/* <p> {text}</p>
+      <p> {sender_name}: {text}</p> */}
     </div>
   );
 }
@@ -64,19 +71,28 @@ function ChatBox(props) {
     // Prevent browser refresh on form submission
     e.preventDefault();
 
+    const {displayName,email} = auth.currentUser;
+
     if (formValue){
       // Add message to firebase collection
       await messagesRef.add({
         text: formValue,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        sender_name:displayName,
+        sender_email:email
       });
   
       // Reset form value
       setFormValue("");
 
-      dummy.current.scrollIntoView({behavior:"smooth"});
+      // Old method for scrolling to last message
+      // dummy.current.scrollIntoView({behavior:"smooth"});
     }
   };
+
+  // Scroll last message into view on change of messages
+  useEffect(()=>dummy.current.scrollIntoView({behavior:"smooth"}),
+  [messages]);
 
   return (
     <div className="chat-component">
@@ -103,27 +119,3 @@ function ChatBox(props) {
     </div>
   );
 }
-
-// function ClassPicker(){
-
-//   //State for current class
-//   const [currentClass,setClass] = useState("MCS1000");
-
-//   const classesQuery = firestore
-//   .collection("University of Guelph");
-
-//   const [classes] = useCollectionData(classesQuery, { idField: "id" });
-
-//   return(
-//     <div className="class-picker">
-//       <form>
-//         <label for="classes">Class:</label>
-//         <select onChange={(e)=>setClass(e.target.value)} id="classes" name="classes">
-//           {classes &&
-//            classes.map( (c)=> (<option value={c.id}>{c.id}</option>))}
-//         </select>
-//         <input type="submit"/>
-//       </form>
-//     </div>
-//   );
-// }

@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState,useRef} from "react";
 import Home from "./screens/Home";
 import Chat from "./screens/Chat";
 
@@ -7,6 +7,7 @@ import firestore,{auth,provider} from "./firebase";
 
 export default function App(props){
 
+    
     //State for current class
     const [currentSchool,setSchool] = useState("University of Guelph");
     const [currentClass,setClass] = useState("MCS1000");
@@ -19,9 +20,9 @@ export default function App(props){
     
     const [schools] = useCollectionData(schoolsQuery,{idField:"id"});
     const [classes] = useCollectionData(classesQuery, { idField: "id" });
-
+    
     const [formSubmitted,setFormSubmitted]=useState(false);
-
+    
     if (formSubmitted){
         return (
             <div>
