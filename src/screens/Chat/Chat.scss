@@ -1,4 +1,4 @@
-@import "../index.scss";
+@import "../../index.scss";
 
 .Chat{
     background-color:white;
@@ -10,24 +10,33 @@
     .top-bar{
         display:flex;
         width:100%;
-        flex:1;
         // justify-content:space-between;
+        // .chat-picker{
+        //     flex:.96;
+        // }
         .chat-picker{
-            flex:.96;
+            display:flex;
+            flex-direction:column;
+            select{
+                width:100%;
+            }
+            button{
+                display:none;
+            }
         }
         .sidebar-container{
             text-align:center;
-            flex:.04;
             .menu-icon{
                 font-size:6rem;
                 color:black;
             }
             &:hover{
                 .side-menu{
-                    right:0;
+                    left:0;
                 }
             }
             .side-menu{
+                $width:20vw;
                 text-align:justify;
                 padding:2rem;
                 height:100vh;
@@ -37,9 +46,9 @@
                 box-shadow:-2px 0px 5px black;
                 // right:0;
                 top:0;
-                right:-15vw;
-                width:15vw;
-                transition-property:right;
+                left:-$width;
+                width:$width;
+                transition-property:left;
                 transition-duration:300ms;
             }
         }

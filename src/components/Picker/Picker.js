@@ -3,10 +3,6 @@ import "firebase/firestore";
 import "firebase/auth";
 import "./Picker.css";
 
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-
-
 export default function Picker(props){
   const {setClass,currentClass,setSchool,currentSchool,classes,schools,onSubmit}=props;
 

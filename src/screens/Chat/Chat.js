@@ -7,7 +7,6 @@ import "firebase/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Picker from "../../components/Picker/Picker";
 import MenuIcon from '@material-ui/icons/Menu';
-import { TabScrollButton } from "@material-ui/core";
 
 export default function Chat(props) {
 
@@ -16,11 +15,11 @@ export default function Chat(props) {
   return (
     <div className="Chat">
       <div className="top-bar">
-        <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
         <div className="sidebar-container">
           <MenuIcon className="menu-icon"/>  
           <div className="side-menu">
             <h1>Hello</h1>
+            <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
           </div>
         </div>
       </div>
@@ -36,7 +35,7 @@ function ChatMessage(props) {
   return (
     <div className="message">
       {
-        sender_name ? <p> <strong>{sender_name}</strong>: {text}</p>
+        sender_name ? <p> <strong>{sender_name} ({sender_email})</strong>: {text}</p>
         :<p> {text}</p>
       }
       {/* <p> {text}</p>

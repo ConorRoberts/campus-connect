@@ -21,21 +21,26 @@ html {
 .Chat .top-bar {
   display: flex;
   width: 100%;
-  flex: 1;
 }
 .Chat .top-bar .chat-picker {
-  flex: 0.96;
+  display: flex;
+  flex-direction: column;
+}
+.Chat .top-bar .chat-picker select {
+  width: 100%;
+}
+.Chat .top-bar .chat-picker button {
+  display: none;
 }
 .Chat .top-bar .sidebar-container {
   text-align: center;
-  flex: 0.04;
 }
 .Chat .top-bar .sidebar-container .menu-icon {
   font-size: 6rem;
   color: black;
 }
 .Chat .top-bar .sidebar-container:hover .side-menu {
-  right: 0;
+  left: 0;
 }
 .Chat .top-bar .sidebar-container .side-menu {
   text-align: justify;
@@ -46,9 +51,9 @@ html {
   z-index: 100;
   box-shadow: -2px 0px 5px black;
   top: 0;
-  right: -15vw;
-  width: 15vw;
-  transition-property: right;
+  left: -20vw;
+  width: 20vw;
+  transition-property: left;
   transition-duration: 300ms;
 }
 .Chat .chat-component {

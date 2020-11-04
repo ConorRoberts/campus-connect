@@ -1,4 +1,4 @@
-import React,{useEffect, useState,useRef} from "react";
+import React,{ useState} from "react";
 import Home from "./screens/Home/Home";
 import Chat from "./screens/Chat/Chat";
 
