@@ -3,6 +3,10 @@ import "firebase/firestore";
 import "firebase/auth";
 import "./Picker.css";
 
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
+
 export default function Picker(props){
   const {setClass,currentClass,setSchool,currentSchool,classes,schools,onSubmit}=props;
 
@@ -23,4 +27,29 @@ export default function Picker(props){
         </button>
       </form>
   )
+  // return(
+  //   <form onSubmit={()=>onSubmit(true)} className={props.className}>
+  //     <Autocomplete
+  //       id="school-picker"
+  //       options={schools}
+  //       // value={schools && schools[0]}
+  //       getOptionLabel={(option) => option.id}
+  //       style={{ width: 300 }}
+  //       renderInput={(params) => <TextField {...params} label="School" variant="outlined" />}
+  //       onChange={(e,newValue)=>setSchool(newValue.id)}
+  //       />
+  //     <Autocomplete
+  //       id="class-picker"
+  //       options={classes}
+  //       value={classes[0]}
+  //       getOptionLabel={(option) => option.id}
+  //       style={{ width: 300 }}
+  //       renderInput={(params) => <TextField {...params} label="Class" variant="outlined" />}
+  //       onChange={(e,newValue)=>setClass(newValue.id)}
+  //     />
+  //     <button>
+  //       Submit
+  //     </button>
+  //   </form>
+  // )
 }

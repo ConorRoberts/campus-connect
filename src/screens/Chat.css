@@ -21,7 +21,14 @@ html {
 .Chat .top-bar {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  flex: 1;
+}
+.Chat .top-bar .chat-picker {
+  flex: 0.96;
+}
+.Chat .top-bar .sidebar-container {
+  text-align: center;
+  flex: 0.04;
 }
 .Chat .top-bar .sidebar-container .menu-icon {
   font-size: 6rem;
@@ -31,9 +38,13 @@ html {
   right: 0;
 }
 .Chat .top-bar .sidebar-container .side-menu {
+  text-align: justify;
+  padding: 2rem;
   height: 100vh;
   background-color: #141A46;
   position: absolute;
+  z-index: 100;
+  box-shadow: -2px 0px 5px black;
   top: 0;
   right: -15vw;
   width: 15vw;

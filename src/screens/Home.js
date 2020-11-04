@@ -36,21 +36,21 @@ function Home(props) {
           <h1>Hello There</h1>
           <img src={splashImage} alt="Campus splash"/>
         </div>
-        {user ? <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn/>}
+        {user ? <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn className="google-signin"/>}
       </main>
-      <footer id="contact">
-        This is contact info
+      <footer className="contact-container">
+        <span>Conor Roberts : Conor@ConorRoberts.com</span>
       </footer>
     </div>
   );
 }
 
-function SignIn(){
+function SignIn(props){
   const signInWithGoogle = () =>{
     auth.signInWithPopup(provider);
   }
   return(
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button className={props.className} onClick={signInWithGoogle}>Sign in with Google</button>
   )
 }
 
