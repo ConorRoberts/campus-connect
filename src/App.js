@@ -16,6 +16,7 @@ export default function App(props) {
   const [schools] = useCollectionData(schoolsQuery, { idField: "id" });
   const [classes] = useCollectionData(classesQuery, { idField: "id" });
 
+  // Need to remove soon
   const [formSubmitted, setFormSubmitted] = useState(true);
 
   const [currentScreen, setCurrentScreen] = useState("home");
@@ -38,10 +39,9 @@ export default function App(props) {
     );
 } else if (currentScreen === "home") {
     return (
-        <div>
+      <div>
         <Home
-            setCurrentScreen={setCurrentScreen}
-          onSubmit={setFormSubmitted}
+          setCurrentScreen={setCurrentScreen}
           currentClass={currentClass}
           currentSchool={currentSchool}
           setClass={setClass}

@@ -10,7 +10,7 @@ import Picker from "../../components/Picker/Picker";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 function Home(props) {
-  const {setClass,currentClass,setSchool,currentSchool,classes,schools,setCurrentScreen,onSubmit}=props;
+  const {setClass,currentClass,setSchool,currentSchool,classes,schools,setCurrentScreen}=props;
   const [user] = useAuthState(auth);
 
   return (
