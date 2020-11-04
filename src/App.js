@@ -18,7 +18,7 @@ export default function App(props) {
 
   const [formSubmitted, setFormSubmitted] = useState(true);
 
-  const [currentScreen, setCurrentScreen] = useState("chat");
+  const [currentScreen, setCurrentScreen] = useState("home");
 
   if (currentScreen === "chat") {
     return (

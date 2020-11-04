@@ -30,7 +30,7 @@ function Home(props) {
           <h1>Campus Connect</h1>
           <img src={splashImage} alt="Campus splash"/>
         </div>
-        {user ? <Picker onSubmit={()=>onSubmit(true)} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn className="google-signin"/>}
+        {user ? <Picker onSubmit={()=>setCurrentScreen("chat")} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn className="google-signin"/>}
       </main>
       <footer className="contact-container">
         <span>
