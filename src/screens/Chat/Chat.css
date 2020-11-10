@@ -154,15 +154,6 @@ html {
     height: 85vh;
     max-height: 85vh;
   }
-  .Chat .chat-component .chat-window .message {
-    padding: 2.8rem;
-    margin: 0.2rem 0;
-  }
-  .Chat .chat-component .chat-window .message img {
-    width: 50px;
-    height: auto;
-    margin-right: 1rem;
-  }
   .Chat .chat-component .form-container {
     padding: 0 1rem;
     margin-top: 1rem;
