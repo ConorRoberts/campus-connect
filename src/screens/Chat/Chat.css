@@ -78,9 +78,6 @@ html {
   height: 100%;
 }
 .Chat .chat-component .chat-window {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   height: 80vh;
   height: auto;
   overflow-y: scroll;
