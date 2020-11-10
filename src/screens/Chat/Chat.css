@@ -158,8 +158,8 @@ html {
     max-height: 85vh;
   }
   .Chat .chat-component .chat-window .message {
-    padding: 0.8rem;
-    margin: 1rem 0;
+    padding: 2.8rem;
+    margin: 0.2rem 0;
   }
   .Chat .chat-component .chat-window .message img {
     width: 50px;
