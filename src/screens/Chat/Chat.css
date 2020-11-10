@@ -106,7 +106,7 @@ html {
   font-size: 1.6rem;
   padding: 1.2rem;
   margin: 0.2rem 0;
-  text-align: justify;
+  text-align: left;
   color: black;
 }
 .Chat .chat-component .chat-window .message img {
@@ -147,4 +147,49 @@ html {
 }
 .Chat .chat-component .send-btn:hover {
   background-color: #879fb8;
+}
+
+@media (max-width: 1000px) {
+  .Chat .chat-component {
+    padding: 0 2vw;
+  }
+  .Chat .chat-component .chat-window {
+    height: 85vh;
+    max-height: 85vh;
+  }
+  .Chat .chat-component .chat-window .message {
+    padding: 0.8rem;
+    margin: 0.2rem 0;
+  }
+  .Chat .chat-component .chat-window .message img {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+  }
+  .Chat .chat-component .form-container {
+    padding: 0 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  .Chat .chat-component .form-container input, .Chat .chat-component .form-container button {
+    font-size: 1.8rem;
+  }
+  .Chat .chat-component .send-box, .Chat .chat-component .send-box:focus-within {
+    flex: 0.75;
+    background-color: #a5a5a5;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    border: 1px solid black;
+  }
+  .Chat .chat-component .send-btn {
+    flex: 0.25;
+    border-radius: 20px;
+  }
+  .Chat .top-bar .sidebar-container .menu-icon {
+    font-size: 4rem;
+  }
+  .Chat .top-bar .sidebar-container .side-menu {
+    left: -90vw;
+    width: 90vw;
+  }
 }

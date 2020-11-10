@@ -6,7 +6,9 @@ export default function Admin(props){
     return(
         <div>
             <button onClick={()=>setCurrentScreen("home")}>Home</button>
-            Hello this is the admin page
+            <form>
+                <input placeholder="Class name..."/>
+            </form>
         </div>
     );
 }

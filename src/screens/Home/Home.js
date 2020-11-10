@@ -16,18 +16,18 @@ function Home(props) {
   return (
     <div className="Home">
       <header>
-        <h1>App</h1>
-        <nav>
+        <h1>Campus Connect</h1>
+        <nav className="top-bar">
           <ul>
+            {user && auth.currentUser.email==="conor@conorroberts.com" &&
             <li>
               <button onClick={()=>setCurrentScreen("admin")}>Admin</button>
-            </li>
+            </li>}
           </ul>
         </nav>
       </header>
       <main>
         <div className="splash-container">
-          <h1>Campus Connect</h1>
           <img src={splashImage} alt="Campus splash"/>
         </div>
         {user ? <Picker onSubmit={()=>setCurrentScreen("chat")} className="home-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/> : <SignIn className="google-signin"/>}

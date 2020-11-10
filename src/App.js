@@ -4,7 +4,7 @@ import Chat from "./screens/Chat/Chat";
 import Admin from "./screens/Admin/Admin";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import firestore, { auth, provider } from "./firebase";
+import firestore from "./firebase";
 
 export default function App(props) {
   //State for current class
@@ -21,7 +21,6 @@ export default function App(props) {
 
   if (currentScreen === "chat") {
     return (
-      <div>
         <Chat
           currentClass={currentClass}
           currentSchool={currentSchool}
@@ -33,11 +32,9 @@ export default function App(props) {
           classesQuery={classesQuery}
           setCurrentScreen={setCurrentScreen}
           />
-      </div>
     );
 } else if (currentScreen === "home") {
     return (
-      <div>
         <Home
           setCurrentScreen={setCurrentScreen}
           currentClass={currentClass}
@@ -49,11 +46,9 @@ export default function App(props) {
           schoolsQuery={schoolsQuery}
           classesQuery={classesQuery}
         />
-      </div>
     );
   }else if(currentScreen==="admin"){
     return(
-
       <Admin setCurrentScreen={setCurrentScreen}/>
     );
   }

@@ -104,7 +104,7 @@
                 font-size:1.6rem;
                 padding:1.2rem;
                 margin:0.2rem 0;
-                text-align:justify;
+                text-align:left;
                 color:black;
                 // border-bottom:1px solid grey;
                 img{
@@ -150,6 +150,60 @@
         }
         .send-btn:hover{
             background-color:rgb(135, 159, 184);
+        }
+    }
+}
+
+@media (max-width:1000px){
+    .Chat{
+        .chat-component{
+            padding:0 2vw;
+            .chat-window{
+                height:85vh;
+                max-height:85vh;
+                .message{
+                    padding:0.8rem;
+                    margin:0.2rem 0;
+                    img{
+                        width:50px;
+                        height:auto;
+                        margin-right:1rem;
+                    }
+                }
+            }
+            .form-container{
+                padding:0 1rem;
+                margin-top:1rem;
+                justify-content:center;
+                input,button{
+                    font-size:1.8rem;
+                }
+            }
+            
+            .send-box,.send-box:focus-within{
+                flex:0.75;
+                background-color:rgb(165, 165, 165);
+                border-radius:10px;
+                margin-right:0.5rem;
+                border:1px solid black;
+            }
+            
+            .send-btn{
+                flex:0.25;
+                border-radius:20px;
+            }
+        }
+        .top-bar{
+            .sidebar-container{
+                .menu-icon{
+                    font-size:4rem;
+                }
+                .side-menu{
+                    $width:90vw;
+                    left:-$width;
+                    width:$width;
+                }
+            }
         }
     }
 }
