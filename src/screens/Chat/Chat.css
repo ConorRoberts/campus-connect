@@ -25,6 +25,17 @@ html {
   width: 100%;
   background-color: #141A46;
   color: white;
+  justify-content: space-between;
+}
+.Chat .top-bar .home-icon {
+  position: absolute;
+  right: 0;
+  font-size: 6rem;
+  color: white;
+  transition: 300ms;
+}
+.Chat .top-bar .home-icon:hover {
+  color: #EC8B5E;
 }
 .Chat .top-bar .class-label-container {
   position: absolute;
@@ -44,7 +55,12 @@ html {
   width: 100%;
 }
 .Chat .top-bar .chat-picker button {
-  display: none;
+  font-size: 2rem;
+  background-color: #EC8B5E;
+  color: black;
+  border: 1px solid white;
+  margin: 2rem;
+  padding: 0.5rem;
 }
 .Chat .top-bar .sidebar-container {
   text-align: center;

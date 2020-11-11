@@ -11,20 +11,27 @@
     flex-direction:column;
     .top-bar{
         display:flex;
-        // align-items:center;
         width:100%;
         background-color:$background-main;
         color:white;
-        // color:$accent-main;
+        justify-content:space-between;
+        .home-icon{
+            position:absolute;
+            right:0;
+
+            font-size:6rem;
+            color:white;
+            transition:300ms;
+            &:hover{
+                color:$accent-main;
+            }
+        }
         .class-label-container{
-            // display:flex;
-            // align-items:center;
             position:absolute;
             top:0;
             left:50%;
             transform:translateX(-50%);
             span{
-                // padding:1rem 4rem;
                 font-size:3rem;
                 text-align:center;
             }
@@ -36,7 +43,12 @@
                 width:100%;
             }
             button{
-                display:none;
+                font-size:2rem;
+                background-color:$accent-main;
+                color:black;
+                border:1px solid white;
+                margin:2rem;
+                padding:0.5rem;
             }
         }
         .sidebar-container{

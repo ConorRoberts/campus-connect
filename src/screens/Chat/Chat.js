@@ -1,62 +1,94 @@
 import "./Chat.css";
-import React, { useEffect, useRef,useState } from "react";
-import firestore,{auth,provider} from "../../firebase";
+import React, { useEffect, useRef, useState } from "react";
+import firestore, { auth } from "../../firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Picker from "../../components/Picker/Picker";
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from "@material-ui/icons/Menu";
+import HomeIcon from '@material-ui/icons/Home';
 
 export default function Chat(props) {
-
-  const {setClass,currentClass,setSchool,currentSchool,classes,schools}=props;
+  const {
+    setClass,
+    currentClass,
+    setSchool,
+    currentSchool,
+    classes,
+    schools,
+    setSelectedSchool,
+    setSelectedClass,
+    selectedClass,
+    selectedSchool,
+    setCurrentScreen
+  } = props;
 
   return (
     <div className="Chat">
       <div className="top-bar">
         <div className="sidebar-container">
-          <MenuIcon className="menu-icon"/>  
+          <MenuIcon className="menu-icon" />
           <div className="side-menu">
-            <Picker className="chat-picker" currentClass={currentClass} currentSchool={currentSchool} setClass={setClass} setSchool={setSchool} schools={schools} classes={classes}/>
+            <Picker
+              className="chat-picker"
+              // currentClass={currentClass}
+              // currentSchool={currentSchool}
+              setClass={setClass}
+              setSchool={setSchool}
+              schools={schools}
+              classes={classes}
+              selectedClass={selectedClass}
+              selectedSchool={selectedSchool}
+              setSelectedClass={setSelectedClass}
+              setSelectedSchool={setSelectedSchool}
+            />
           </div>
         </div>
         <div className="class-label-container">
           <span>{currentClass}</span>
         </div>
+        <HomeIcon onClick={()=>setCurrentScreen("home")}className="home-icon"/>
       </div>
-      <ChatBox currentClass={currentClass} currentSchool={currentSchool}/>
+      <ChatBox currentClass={currentClass} currentSchool={currentSchool} />
     </div>
   );
 }
 
 function ChatMessage(props) {
   // Retrieving text from message object (passed as prop)
-  const { text,sender_name,sender_email,timestamp,photoURL} = props.message;
+  const {
+    text,
+    sender_name,
+    sender_email,
+    // timestamp,
+    photoURL,
+  } = props.message;
 
   return (
     <div className="message">
-      <div>
-        {photoURL ? <img src={photoURL}/> : ""}
-      </div>
+      <div>{photoURL ? <img alt="Profile icon" src={photoURL} /> : ""}</div>
       <p>
-        <strong>{sender_name} ({sender_email})</strong><br/>{text}
+        <strong>
+          {sender_name} ({sender_email})
+        </strong>
+        <br />
+        {text}
       </p>
     </div>
   );
 }
 
 function ChatBox(props) {
-
   const dummy = useRef();
-  
+
   // Set reference point for messages collection
   const messagesRef = firestore
     .collection("schools")
     .doc(props.currentSchool)
     .collection("classes")
     .doc(props.currentClass)
-    .collection("messages")
+    .collection("messages");
 
   // Organizing message data retrieved from messagesRef
   const query = messagesRef.orderBy("timestamp");
@@ -72,34 +104,32 @@ function ChatBox(props) {
     // Prevent browser refresh on form submission
     e.preventDefault();
 
-    const {displayName,email,photoURL} = auth.currentUser;
+    const { displayName, email, photoURL } = auth.currentUser;
 
-    if (formValue){
+    if (formValue) {
       // Add message to firebase collection
       await messagesRef.add({
         text: formValue,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        sender_name:displayName,
-        sender_email:email,
-        photoURL
+        sender_name: displayName,
+        sender_email: email,
+        photoURL,
       });
-  
+
       // Reset form value
       setFormValue("");
-
-      // Old method for scrolling to last message
-      // dummy.current.scrollIntoView({behavior:"smooth"});
     }
   };
 
   // Scroll last message into view on change of messages
-  useEffect(()=>dummy.current.scrollIntoView({behavior:"smooth"}),
-  [messages]);
+  useEffect(() => dummy.current.scrollIntoView({ behavior: "smooth" }), [
+    messages,
+  ]);
 
   return (
     <div className="chat-component">
       <div className="chat-window">
-        <p className= "beginning-label">This is the beginning of the messages</p>
+        <p className="beginning-label">This is the beginning of the messages</p>
         {/* Checks if there are any messages
         renders out all messages, passing the firebase message ID in as the key (for react rendering)
         passes in entire message object for use within later functions */}

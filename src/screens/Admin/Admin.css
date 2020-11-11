@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Admin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141A46;
+}
+.Admin .home-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: white;
+  border: 1px solid black;
+  margin: 1rem;
+  color: black;
+}
+.Admin form {
+  display: flex;
+  flex-direction: column;
+}
+.Admin form label {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+}
+.Admin form > * {
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
