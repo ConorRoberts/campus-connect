@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cfa3141c30886d5aac0eeb05862f381b",
+    "revision": "71187be4c01c22d015dfb56ed37e5723",
     "url": "/campus-connect/index.html"
   },
   {
-    "revision": "05598ac6c9ea24e4374a",
-    "url": "/campus-connect/static/css/main.384eb334.chunk.css"
+    "revision": "093fbc3e68c71cddda5b",
+    "url": "/campus-connect/static/css/main.a38fcebf.chunk.css"
   },
   {
-    "revision": "32f3f6fc5d717b97a1a5",
-    "url": "/campus-connect/static/js/2.4df824b3.chunk.js"
+    "revision": "717fa3af7a49aaea34e8",
+    "url": "/campus-connect/static/js/2.dcd89825.chunk.js"
   },
   {
     "revision": "9cf9d893b5c51de0aa6dd9e07be64537",
-    "url": "/campus-connect/static/js/2.4df824b3.chunk.js.LICENSE.txt"
+    "url": "/campus-connect/static/js/2.dcd89825.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "05598ac6c9ea24e4374a",
-    "url": "/campus-connect/static/js/main.fc41987e.chunk.js"
+    "revision": "093fbc3e68c71cddda5b",
+    "url": "/campus-connect/static/js/main.ddbd84a6.chunk.js"
   },
   {
     "revision": "690481a2612596018938",
