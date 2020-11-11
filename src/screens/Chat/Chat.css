@@ -72,6 +72,9 @@ html {
 .Chat .top-bar .sidebar-container:hover .side-menu {
   left: 0;
 }
+.Chat .top-bar .sidebar-container:hover .side-menu form {
+  display: block;
+}
 .Chat .top-bar .sidebar-container .side-menu {
   text-align: justify;
   padding: 2rem;
@@ -85,6 +88,10 @@ html {
   width: 20vw;
   transition-property: left;
   transition-duration: 300ms;
+}
+.Chat .top-bar .sidebar-container .side-menu form {
+  text-align: center;
+  display: none;
 }
 .Chat .chat-component {
   position: relative;

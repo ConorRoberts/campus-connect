@@ -7,13 +7,7 @@ export default function Admin(props) {
   const { setCurrentScreen, schools } = props;
   const [formValue, setFormValue] = useState("");
   const [selectedSchool, setSelectedSchool] = useState("University of Guelph");
-  // Firebase structure for adding new class
-  // schools (collection)
-  // school-name (document)
-  // classes (collection)
-  // class-name (document)
-  // messages (collection)
-  // inside-messages (documents multiple)
+
   async function addClass(e, schoolName, className) {
     e.preventDefault();
     const databaseRef = firestore

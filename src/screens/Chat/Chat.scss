@@ -60,6 +60,9 @@
             &:hover{
                 .side-menu{
                     left:0;
+                    form{
+                        display:block;
+                    }
                 }
             }
             .side-menu{
@@ -71,12 +74,15 @@
                 position:absolute;
                 z-index:100;
                 box-shadow:-2px 0px 5px black;
-                // right:0;
                 top:0;
                 left:-$width;
                 width:$width;
                 transition-property:left;
                 transition-duration:300ms;
+                form{
+                    text-align:center;
+                    display:none;
+                }
             }
         }
     }
