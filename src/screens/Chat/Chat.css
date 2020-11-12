@@ -138,7 +138,7 @@ html {
 .Chat .chat-component .form-container {
   background-color: #141A46;
   position: absolute;
-  height: calc(100vh - $top-bar-height - $chat-window-height);
+  height: 6vh;
   bottom: 0;
   left: 0;
   display: flex;

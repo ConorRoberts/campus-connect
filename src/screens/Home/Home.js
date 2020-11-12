@@ -49,8 +49,6 @@ function Home(props) {
           <Picker
             onSubmit={() => setCurrentScreen("chat")}
             className="home-picker"
-            // currentClass={currentClass}
-            // currentSchool={currentSchool}
             setClass={setClass}
             setSchool={setSchool}
             schools={schools}
