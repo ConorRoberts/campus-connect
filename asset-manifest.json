@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/campus-connect/static/css/main.aa4c087c.chunk.css",
+    "main.css": "/campus-connect/static/css/main.5ec8590e.chunk.css",
     "main.js": "/campus-connect/static/js/main.ff885197.chunk.js",
     "main.js.map": "/campus-connect/static/js/main.ff885197.chunk.js.map",
     "runtime-main.js": "/campus-connect/static/js/runtime-main.007b86de.js",
@@ -8,16 +8,16 @@
     "static/js/2.3b5ebaa3.chunk.js": "/campus-connect/static/js/2.3b5ebaa3.chunk.js",
     "static/js/2.3b5ebaa3.chunk.js.map": "/campus-connect/static/js/2.3b5ebaa3.chunk.js.map",
     "index.html": "/campus-connect/index.html",
-    "precache-manifest.79273f2cdbf0ef446a03a4d14965b6ec.js": "/campus-connect/precache-manifest.79273f2cdbf0ef446a03a4d14965b6ec.js",
+    "precache-manifest.d01be17c8cf7195b6312ec72d62381da.js": "/campus-connect/precache-manifest.d01be17c8cf7195b6312ec72d62381da.js",
     "service-worker.js": "/campus-connect/service-worker.js",
-    "static/css/main.aa4c087c.chunk.css.map": "/campus-connect/static/css/main.aa4c087c.chunk.css.map",
+    "static/css/main.5ec8590e.chunk.css.map": "/campus-connect/static/css/main.5ec8590e.chunk.css.map",
     "static/js/2.3b5ebaa3.chunk.js.LICENSE.txt": "/campus-connect/static/js/2.3b5ebaa3.chunk.js.LICENSE.txt",
     "static/media/campus-splash.jpg": "/campus-connect/static/media/campus-splash.3195ce31.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.007b86de.js",
     "static/js/2.3b5ebaa3.chunk.js",
-    "static/css/main.aa4c087c.chunk.css",
+    "static/css/main.5ec8590e.chunk.css",
     "static/js/main.ff885197.chunk.js"
   ]
 }
