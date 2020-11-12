@@ -1,9 +1,9 @@
 @import "../../index.scss";
 
 .Chat{
-    $top-bar-height:5vh;
+    $top-bar-height:5%;
     $chat-window-height:89vh;
-    $form-container-height:6vh;
+    $form-container-height:6%;
     
     background-color:white;
     height:100vh;
@@ -73,7 +73,7 @@
                 $width:20vw;
                 text-align:justify;
                 padding:2rem;
-                height:100vh;
+                height:100%;
                 background-color:$background-main;
                 position:absolute;
                 z-index:100;
@@ -95,16 +95,10 @@
         bottom:0;
         left:0;
         height:100%;
-        // padding:0 5vw;
         .chat-window{
-            // display:flex;
-            // flex-direction:column;
-            // align-items:flex-start;
             height:$chat-window-height;
             overflow-y:scroll;
             overflow-x:hidden;
-            // max-height:90vh;
-            // width:50%;
             width:100%;
             .beginning-label{
                 font-size: 1.5rem;
@@ -120,7 +114,6 @@
                 align-items:center;
                 padding:0rem 1rem;
                 text-align:center;
-                // border-radius:5px;
                 width:100%;
                 color:white;
                 font-size:1.6rem;
@@ -128,7 +121,6 @@
                 margin:0.2rem 0;
                 text-align:left;
                 color:black;
-                // border-bottom:1px solid grey;
                 img{
                     width:50px;
                     height:auto;
@@ -157,7 +149,6 @@
                 flex:0.6;
                 background-color:rgb(165, 165, 165);
                 border-radius:10px;
-                // margin-right:3rem;
                 padding:1rem;
                 margin-right:1.5rem;
                 border:1px solid black;
@@ -184,8 +175,13 @@
 
 @media (max-width:1000px){
     .Chat{
+        height:88vh;
+        overflow:hidden;
         .chat-component{
-            padding:0 2vw;
+            overflow:hidden;
+            .chat-window{
+                height:77vh;
+            }
             .form-container{
                 padding:0 1rem;
                 margin-top:1rem;
@@ -205,6 +201,7 @@
             }
         }
         .top-bar{
+            height:6vh;
             .sidebar-container{
                 .side-menu{
                     $width:90vw;

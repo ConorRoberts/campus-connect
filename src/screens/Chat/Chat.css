@@ -20,7 +20,7 @@ html {
   flex-direction: column;
 }
 .Chat .top-bar {
-  height: 5vh;
+  height: 5%;
   display: flex;
   width: 100%;
   background-color: #141A46;
@@ -78,7 +78,7 @@ html {
 .Chat .top-bar .sidebar-container .side-menu {
   text-align: justify;
   padding: 2rem;
-  height: 100vh;
+  height: 100%;
   background-color: #141A46;
   position: absolute;
   z-index: 100;
@@ -138,7 +138,7 @@ html {
 .Chat .chat-component .form-container {
   background-color: #141A46;
   position: absolute;
-  height: 6vh;
+  height: 6%;
   bottom: 0;
   left: 0;
   display: flex;
@@ -174,8 +174,15 @@ html {
 }
 
 @media (max-width: 1000px) {
+  .Chat {
+    height: 88vh;
+    overflow: hidden;
+  }
   .Chat .chat-component {
-    padding: 0 2vw;
+    overflow: hidden;
+  }
+  .Chat .chat-component .chat-window {
+    height: 77vh;
   }
   .Chat .chat-component .form-container {
     padding: 0 1rem;
@@ -191,6 +198,9 @@ html {
   }
   .Chat .chat-component .send-btn {
     flex: 0.25;
+  }
+  .Chat .top-bar {
+    height: 6vh;
   }
   .Chat .top-bar .sidebar-container .side-menu {
     left: -90vw;
