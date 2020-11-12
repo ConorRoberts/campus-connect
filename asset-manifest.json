@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/campus-connect/static/css/main.2facd1cf.chunk.css",
-    "main.js": "/campus-connect/static/js/main.7f787775.chunk.js",
-    "main.js.map": "/campus-connect/static/js/main.7f787775.chunk.js.map",
+    "main.css": "/campus-connect/static/css/main.41953100.chunk.css",
+    "main.js": "/campus-connect/static/js/main.ff885197.chunk.js",
+    "main.js.map": "/campus-connect/static/js/main.ff885197.chunk.js.map",
     "runtime-main.js": "/campus-connect/static/js/runtime-main.007b86de.js",
     "runtime-main.js.map": "/campus-connect/static/js/runtime-main.007b86de.js.map",
     "static/js/2.3b5ebaa3.chunk.js": "/campus-connect/static/js/2.3b5ebaa3.chunk.js",
     "static/js/2.3b5ebaa3.chunk.js.map": "/campus-connect/static/js/2.3b5ebaa3.chunk.js.map",
     "index.html": "/campus-connect/index.html",
-    "precache-manifest.e1cf7f9a76148315e0dc130159bfe51b.js": "/campus-connect/precache-manifest.e1cf7f9a76148315e0dc130159bfe51b.js",
+    "precache-manifest.71e695e6572177470e44f787c5a026c2.js": "/campus-connect/precache-manifest.71e695e6572177470e44f787c5a026c2.js",
     "service-worker.js": "/campus-connect/service-worker.js",
-    "static/css/main.2facd1cf.chunk.css.map": "/campus-connect/static/css/main.2facd1cf.chunk.css.map",
+    "static/css/main.41953100.chunk.css.map": "/campus-connect/static/css/main.41953100.chunk.css.map",
     "static/js/2.3b5ebaa3.chunk.js.LICENSE.txt": "/campus-connect/static/js/2.3b5ebaa3.chunk.js.LICENSE.txt",
     "static/media/campus-splash.jpg": "/campus-connect/static/media/campus-splash.3195ce31.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.007b86de.js",
     "static/js/2.3b5ebaa3.chunk.js",
-    "static/css/main.2facd1cf.chunk.css",
-    "static/js/main.7f787775.chunk.js"
+    "static/css/main.41953100.chunk.css",
+    "static/js/main.ff885197.chunk.js"
   ]
 }
