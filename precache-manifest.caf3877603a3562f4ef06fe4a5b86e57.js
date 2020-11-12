@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa9c3dc8140c69f5547e54629aae6101",
+    "revision": "3cc3fa1e12e94d6b52bc7ce6e2e7b4c1",
     "url": "/campus-connect/index.html"
   },
   {
-    "revision": "cc2fe50c9bdd403915b1",
-    "url": "/campus-connect/static/css/main.ede0d491.chunk.css"
+    "revision": "647363c98377ad6faced",
+    "url": "/campus-connect/static/css/main.2a677810.chunk.css"
   },
   {
     "revision": "798e19ba7110f17a7511",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/campus-connect/static/js/2.3b5ebaa3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc2fe50c9bdd403915b1",
+    "revision": "647363c98377ad6faced",
     "url": "/campus-connect/static/js/main.ff885197.chunk.js"
   },
   {
