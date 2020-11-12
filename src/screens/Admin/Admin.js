@@ -34,7 +34,9 @@ export default function Admin(props) {
   }
   return (
     <div className="Admin">
-      <button className="home-button" onClick={() => setCurrentScreen("home")}>Home</button>
+      <button className="home-button" onClick={() => setCurrentScreen("home")}>
+        Home
+      </button>
       <form
         className="admin-form"
         onSubmit={(e) => addClass(e, selectedSchool, formValue)}

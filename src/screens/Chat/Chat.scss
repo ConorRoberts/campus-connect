@@ -1,15 +1,19 @@
 @import "../../index.scss";
 
 .Chat{
+    $top-bar-height:5vh;
+    $chat-window-height:89vh;
+    $form-container-height:calc(100vh - $top-bar-height - $chat-window-height);
+    
     background-color:white;
     height:100vh;
     position:relative;
     overflow:hidden;
-    color:white;
     max-height:100vh;
     display:flex;
     flex-direction:column;
     .top-bar{
+        height:$top-bar-height;
         display:flex;
         width:100%;
         background-color:$background-main;
@@ -19,7 +23,7 @@
             position:absolute;
             right:0;
 
-            font-size:6rem;
+            font-size:5rem;
             color:white;
             transition:300ms;
             &:hover{
@@ -32,7 +36,7 @@
             left:50%;
             transform:translateX(-50%);
             span{
-                font-size:3rem;
+                font-size:3.5rem;
                 text-align:center;
             }
         }
@@ -54,7 +58,7 @@
         .sidebar-container{
             text-align:center;
             .menu-icon{
-                font-size:6rem;
+                font-size:5rem;
                 color:inherit;
             }
             &:hover{
@@ -90,18 +94,18 @@
         position:relative;
         bottom:0;
         left:0;
-        padding:0 5vw;
         height:100%;
+        // padding:0 5vw;
         .chat-window{
             // display:flex;
             // flex-direction:column;
             // align-items:flex-start;
-            height:80vh;
-            height:auto;
+            height:$chat-window-height;
             overflow-y:scroll;
             overflow-x:hidden;
-            max-height:80vh;
+            // max-height:90vh;
             // width:50%;
+            width:100%;
             .beginning-label{
                 font-size: 1.5rem;
                 color: black;
@@ -120,7 +124,7 @@
                 width:100%;
                 color:white;
                 font-size:1.6rem;
-                padding:1.2rem;
+                padding:1.2rem 5vw;
                 margin:0.2rem 0;
                 text-align:left;
                 color:black;
@@ -135,39 +139,45 @@
                 }
             }
         }
+        
         .form-container{
+            background-color:$background-main;
             position:absolute;
+            height:$form-container-height;
             bottom:0;
+            left:0;
             display:flex;
             width:100%;
-            // padding:0 10vw;
-            margin-top:1rem;
             justify-content:center;
             input,button{
-                font-size:2.5rem;
+                margin:0.5rem 0;
+                font-size:2rem;
             }
-        }
-        
-        .send-box,.send-box:focus-within{
-            font-size:1.5rem;
-            flex:0.6;
-            background-color:rgb(165, 165, 165);
-            border-radius:30px;
-            margin-right:3rem;
-            border:1px solid black;
-        }
-        
-        .send-btn{
-            font-size:1.5rem;
-            flex:0.1;
-            background-color:$accent-main;
-            border:none;
-            padding:0.5rem;
-            border-radius:30px;
-            transition: background-color 300ms;
-        }
-        .send-btn:hover{
-            background-color:rgb(135, 159, 184);
+            .send-box{
+                flex:0.6;
+                background-color:rgb(165, 165, 165);
+                border-radius:10px;
+                // margin-right:3rem;
+                padding:1rem;
+                margin-right:1.5rem;
+                border:1px solid black;
+                &:focus{
+                    outline:none;
+                }
+            }
+            
+            .send-btn{
+                margin-left:1.5rem;
+                flex:0.1;
+                background-color:$accent-main;
+                border:none;
+                padding:0.5rem;
+                border-radius:10px;
+                transition: background-color 300ms;
+                &:hover{
+                    background-color:rgb(135, 159, 184);
+                }
+            }
         }
     }
 }
@@ -176,19 +186,6 @@
     .Chat{
         .chat-component{
             padding:0 2vw;
-            .chat-window{
-                height:85vh;
-                max-height:85vh;
-                // .message{
-                //     // padding:2.8rem;
-                //     // margin:0.2rem 0;
-                //     img{
-                //         width:50px;
-                //         height:auto;
-                //         margin-right:1rem;
-                //     }
-                // }
-            }
             .form-container{
                 padding:0 1rem;
                 margin-top:1rem;
@@ -198,24 +195,17 @@
                 }
             }
             
-            .send-box,.send-box:focus-within{
+            .send-box{
                 flex:0.75;
-                background-color:rgb(165, 165, 165);
-                border-radius:10px;
                 margin-right:0.5rem;
-                border:1px solid black;
             }
             
             .send-btn{
                 flex:0.25;
-                border-radius:20px;
             }
         }
         .top-bar{
             .sidebar-container{
-                .menu-icon{
-                    font-size:4rem;
-                }
                 .side-menu{
                     $width:90vw;
                     left:-$width;

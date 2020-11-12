@@ -1,12 +1,11 @@
-@import "../index.scss";
+@import "../../index.scss";
 
 .chat-picker{
     border:1px solid $accent-main;
     background-color:$background-main;
     padding:1rem;
     display:flex;
-    // width:100%;
-    // flex-direction:column;
+
     align-items:center;
     height:5vh;
     flex:0.95;
@@ -17,13 +16,10 @@
         letter-spacing:0.1rem;
     }
     .school-container{
-        // height:10vh;
         font-size:3rem;
-        // background-color:$background-main;
         text-align:center;
     }
     .class-container{
-        // height:10vh;
         text-align:center;
         font-size:3rem;
     }

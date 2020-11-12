@@ -142,7 +142,7 @@ function ChatBox(props) {
           className="send-box"
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
-          placeholder="   Message..."
+          placeholder="Message..."
         />
         <button className="send-btn" type="submit">
           Send

@@ -15,12 +15,12 @@ html {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  color: white;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 .Chat .top-bar {
+  height: 5vh;
   display: flex;
   width: 100%;
   background-color: #141A46;
@@ -30,7 +30,7 @@ html {
 .Chat .top-bar .home-icon {
   position: absolute;
   right: 0;
-  font-size: 6rem;
+  font-size: 5rem;
   color: white;
   transition: 300ms;
 }
@@ -44,7 +44,7 @@ html {
   transform: translateX(-50%);
 }
 .Chat .top-bar .class-label-container span {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
 }
 .Chat .top-bar .chat-picker {
@@ -66,7 +66,7 @@ html {
   text-align: center;
 }
 .Chat .top-bar .sidebar-container .menu-icon {
-  font-size: 6rem;
+  font-size: 5rem;
   color: inherit;
 }
 .Chat .top-bar .sidebar-container:hover .side-menu {
@@ -97,15 +97,13 @@ html {
   position: relative;
   bottom: 0;
   left: 0;
-  padding: 0 5vw;
   height: 100%;
 }
 .Chat .chat-component .chat-window {
-  height: 80vh;
-  height: auto;
+  height: 89vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 80vh;
+  width: 100%;
 }
 .Chat .chat-component .chat-window .beginning-label {
   font-size: 1.5rem;
@@ -124,7 +122,7 @@ html {
   width: 100%;
   color: white;
   font-size: 1.6rem;
-  padding: 1.2rem;
+  padding: 1.2rem 5vw;
   margin: 0.2rem 0;
   text-align: left;
   color: black;
@@ -138,44 +136,46 @@ html {
   background-color: #b8b8b8;
 }
 .Chat .chat-component .form-container {
+  background-color: #141A46;
   position: absolute;
+  height: calc(100vh - $top-bar-height - $chat-window-height);
   bottom: 0;
+  left: 0;
   display: flex;
   width: 100%;
-  margin-top: 1rem;
   justify-content: center;
 }
 .Chat .chat-component .form-container input, .Chat .chat-component .form-container button {
-  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  font-size: 2rem;
 }
-.Chat .chat-component .send-box, .Chat .chat-component .send-box:focus-within {
-  font-size: 1.5rem;
+.Chat .chat-component .form-container .send-box {
   flex: 0.6;
   background-color: #a5a5a5;
-  border-radius: 30px;
-  margin-right: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-right: 1.5rem;
   border: 1px solid black;
 }
-.Chat .chat-component .send-btn {
-  font-size: 1.5rem;
+.Chat .chat-component .form-container .send-box:focus {
+  outline: none;
+}
+.Chat .chat-component .form-container .send-btn {
+  margin-left: 1.5rem;
   flex: 0.1;
   background-color: #EC8B5E;
   border: none;
   padding: 0.5rem;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: background-color 300ms;
 }
-.Chat .chat-component .send-btn:hover {
+.Chat .chat-component .form-container .send-btn:hover {
   background-color: #879fb8;
 }
 
 @media (max-width: 1000px) {
   .Chat .chat-component {
     padding: 0 2vw;
-  }
-  .Chat .chat-component .chat-window {
-    height: 85vh;
-    max-height: 85vh;
   }
   .Chat .chat-component .form-container {
     padding: 0 1rem;
@@ -185,19 +185,12 @@ html {
   .Chat .chat-component .form-container input, .Chat .chat-component .form-container button {
     font-size: 1.8rem;
   }
-  .Chat .chat-component .send-box, .Chat .chat-component .send-box:focus-within {
+  .Chat .chat-component .send-box {
     flex: 0.75;
-    background-color: #a5a5a5;
-    border-radius: 10px;
     margin-right: 0.5rem;
-    border: 1px solid black;
   }
   .Chat .chat-component .send-btn {
     flex: 0.25;
-    border-radius: 20px;
-  }
-  .Chat .top-bar .sidebar-container .menu-icon {
-    font-size: 4rem;
   }
   .Chat .top-bar .sidebar-container .side-menu {
     left: -90vw;

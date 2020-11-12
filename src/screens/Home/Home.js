@@ -11,8 +11,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function Home(props) {
   const {
     setClass,
-    // currentClass,
-    // currentSchool,
     setSchool,
     classes,
     schools,
@@ -31,11 +29,15 @@ function Home(props) {
         <h1>Campus Connect</h1>
         <nav className="top-bar">
           <ul>
-            {user && (auth.currentUser.email === "conor@conorroberts.com" || auth.currentUser.email === "sante4832@gmail.com")  && (
-              <li>
-                <button onClick={() => setCurrentScreen("admin")}>Admin</button>
-              </li>
-            )}
+            {user &&
+              (auth.currentUser.email === "conor@conorroberts.com" ||
+                auth.currentUser.email === "sante4832@gmail.com") && (
+                <li>
+                  <button onClick={() => setCurrentScreen("admin")}>
+                    Admin
+                  </button>
+                </li>
+              )}
           </ul>
         </nav>
       </header>

@@ -10,6 +10,7 @@ export default function App(props) {
   //State for current class
   const [currentSchool, setSchool] = useState("University of Guelph");
   const [currentClass, setClass] = useState("MCS1000");
+  
   const [selectedSchool, setSelectedSchool] = useState(currentSchool);
   const [selectedClass, setSelectedClass] = useState(currentClass);
 
