@@ -60,7 +60,7 @@ export default function Admin(props) {
           placeholder="Class name..."
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button>Add Class</button>
+        <button type="submit">Add Class</button>
       </form>
     </div>
   );

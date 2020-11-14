@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.ChatMessage.message {
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 1.6rem;
+  padding: 1.2rem 5vw;
+  margin: 0.2rem 0;
+  text-align: left;
+  color: black;
+}
+.ChatMessage.message img {
+  width: 50px;
+  height: auto;
+  margin-right: 1rem;
+}
+.ChatMessage.message:hover {
+  background-color: #b8b8b8;
+}
+.ChatMessage.message.question {
+  background-color: #EC8B5E;
+}

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.ChatBox {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+}
+.ChatBox .chat-window {
+  width: 50%;
+  height: 89vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.ChatBox .chat-window .beginning-label {
+  font-size: 1.5rem;
+  color: black;
+  position: relative;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ChatBox .questions-container {
+  width: 50%;
+  background-color: grey;
+}
+.ChatBox .form-container {
+  background-color: #141A46;
+  position: absolute;
+  height: 6%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+.ChatBox .form-container .send-box, .ChatBox .form-container .send-btn {
+  font-size: 2rem;
+}
+.ChatBox .form-container .send-box {
+  width: 60%;
+  background-color: #a5a5a5;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-right: 1.5rem;
+  border: 1px solid black;
+}
+.ChatBox .form-container .send-box:focus {
+  outline: none;
+}
+.ChatBox .form-container .send-btn {
+  margin-left: 1.5rem;
+  width: 10%;
+  background-color: #EC8B5E;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: background-color 300ms;
+}
+.ChatBox .form-container .send-btn:hover {
+  background-color: #879fb8;
+}
+.ChatBox .question-button {
+  border: 1px solid black;
+  width: 5%;
+}
+.ChatBox .question-button:focus {
+  outline: none;
+}
+.ChatBox .question-button .question-icon {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+}
+.ChatBox .question-button.on {
+  background-color: #EC8B5E;
+}
+.ChatBox .question-button.off {
+  background-color: grey;
+}
