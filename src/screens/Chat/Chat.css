@@ -20,7 +20,7 @@ html {
   flex-direction: column;
 }
 .Chat .top-bar {
-  height: 5%;
+  height: auto;
   display: flex;
   width: 100%;
   background-color: #141A46;

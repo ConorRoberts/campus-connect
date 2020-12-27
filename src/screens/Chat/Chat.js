@@ -40,9 +40,13 @@ export default function Chat(props) {
               setSelectedSchool={setSelectedSchool}
             />
           </div>
+
         </div>
         <div className="question-sidebar-container">
-          
+          {/* <ContactSupportIcon/>
+          <div className="questions-menu">
+            
+          </div> */}
         </div>
         <div className="class-label-container">
           <span>{currentClass}</span>

@@ -10,7 +10,7 @@
     height:100%;
     display:flex;
     .chat-window{
-        width:50%;
+        width:100%;
         height:$chat-window-height;
         overflow-y:scroll;
         overflow-x:hidden;
@@ -24,14 +24,28 @@
             left:50%;
             transform:translateX(-50%);
         }
+        &.squished{
+            width:70%;
+        }
+    }
+    
+    .questions-menu-button{
+        position:absolute;
+        bottom:0%;
+        right:5%;
+        padding:0.7rem;
+        font-size:6rem;
+        color:white;
+        z-index:1000;
+        border:1px solid white;
     }
 
     .questions-container{
-        width:50%;
+        width:0%;
         background-color:grey;
-        p{
-            // font-size:3rem;
-
+        // transition: width 300ms;
+        &.opened{
+            width:30%;
         }
     }
     

@@ -6,11 +6,11 @@ import Admin from "./screens/Admin/Admin";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firestore from "./firebase";
 
-export default function App(props) {
-  //State for current class
+export default function App() {
+  // State for current class
   const [currentSchool, setSchool] = useState("University of Guelph");
   const [currentClass, setClass] = useState("MCS1000");
-  
+
   const [selectedSchool, setSelectedSchool] = useState(currentSchool);
   const [selectedClass, setSelectedClass] = useState(currentClass);
 
@@ -59,9 +59,6 @@ export default function App(props) {
       />
     );
   } else if (currentScreen === "admin") {
-    return <Admin 
-    setCurrentScreen={setCurrentScreen}
-    schools={schools} 
-    />;
+    return <Admin setCurrentScreen={setCurrentScreen} schools={schools} />;
   }
 }

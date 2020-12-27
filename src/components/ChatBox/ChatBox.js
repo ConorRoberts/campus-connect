@@ -5,6 +5,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import "./ChatBox.css";
+import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 
 export default function ChatBox(props) {
   const dummy = useRef();
@@ -56,17 +57,29 @@ export default function ChatBox(props) {
     messages,
   ]);
 
+  const [questionMenuState, setQuestionMenuState] = useState(false);
+
   return (
     <div className="ChatBox">
-      <div className="chat-window">
+      <div className={questionMenuState ? "chat-window squished" : "chat-window"}>
         <p className="beginning-label">This is the beginning of the messages</p>
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
         <div ref={dummy}></div>
       </div>
-      <div className="questions-container">
-          {messages &&
-          messages.filter((msg)=>msg.is_question && msg.is_question===true).map((msg) => <ChatMessage key={msg.id+"-question"} message={msg} />)}
+      <ContactSupportIcon
+        onClick={() => {
+          setQuestionMenuState(!questionMenuState);
+        }}
+        className="questions-menu-button"
+      />
+      <div className={questionMenuState ? "questions-container opened" : "questions-container"}>
+        {messages &&
+          messages
+            .filter((msg) => msg.is_question && msg.is_question === true)
+            .map((msg) => (
+              <ChatMessage key={msg.id + "-question"} message={msg} />
+            ))}
       </div>
       <form className="form-container" onSubmit={sendMessage}>
         <input

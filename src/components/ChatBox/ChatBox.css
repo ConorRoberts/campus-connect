@@ -18,7 +18,7 @@ html {
   display: flex;
 }
 .ChatBox .chat-window {
-  width: 50%;
+  width: 100%;
   height: 89vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -32,9 +32,25 @@ html {
   left: 50%;
   transform: translateX(-50%);
 }
+.ChatBox .chat-window.squished {
+  width: 70%;
+}
+.ChatBox .questions-menu-button {
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  padding: 0.7rem;
+  font-size: 6rem;
+  color: white;
+  z-index: 1000;
+  border: 1px solid white;
+}
 .ChatBox .questions-container {
-  width: 50%;
+  width: 0%;
   background-color: grey;
+}
+.ChatBox .questions-container.opened {
+  width: 30%;
 }
 .ChatBox .form-container {
   background-color: #141A46;
