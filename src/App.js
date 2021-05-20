@@ -4,7 +4,7 @@ import Chat from "./screens/Chat/Chat";
 import Admin from "./screens/Admin/Admin";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import firestore from "./firebase";
+import firestore from "./config/firebase";
 
 export default function App() {
   // State for current class
